@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<!--
+
+Grant Seime
+
+Notes:
+    I chose to use a template from w3 schools as my base page:
+
+    https://www.w3schools.com/w3css/tryw3css_templates_photo.htm
+
+    I edited it with the Cycle2 plugin. With this plugin, instead of just one photo
+    that stays fixed, there is a small rotation of photos that displays as each fades
+    from one into another.
+
+    The plugin usage is very handy and simple to use. Once the library is sourced
+    into the code, one can utilize much of the various functionality capabilities
+    of Cycle2 via a CSS class, no actual javascript required. I simply reference
+    the class "cycle-slideshow".
+
+    In order to get the rotation of photos, I had to nest each set of images into
+    its own div calling "cycle-slideshow".
+
+    Personal photos were added in as replacement to the stock photos as I preferred
+    the personal touch of my own photos as that was the intended purpose of the
+    template.
+
+    Using stock photos would have required using at least one photo not included
+    in the template as none of the included images is of a similar size of the
+    rocks.jpg image. This created whitespace between different parts of the images
+    on the page.
+
+    -->
+
+<!-- Reference to w3 school CSS style sheet.
+     Reference to google api for fonts
+     -->
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body,h1 {font-family: "Montserrat", sans-serif}
+  img {margin-bottom: -7px}
+  .w3-row-padding img {margin-bottom: 12px}
+</style>
+<body>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Shop</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
+  </div>
+</nav>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+  <!-- Header -->
+  <div class="w3-opacity">
+    <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-clear"></div>
+    <header class="w3-center w3-margin-bottom">
+      <h1><b>PHOTOLIO</b></h1>
+      <p><b>A template made by w3.css for photographers.</b></p>
+      <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">Toggle Grid Padding</button></p>
+    </header>
+  </div>
+
+  <!-- Photo Grid -->
+  <!--
+       class w3-row and id myGrid from w3 stylesheet formats the row.
+  -->
+  <div class="w3-row" id="myGrid" style="margin-bottom:128px">
+
+    <!-- First Column
+      Cycle-slideshow to utilize Cycle2. For each set of 3 images, nest a separate
+      div referencing cycle-slideshow inside the div referencing "w3-third". Width
+      set to 100% to remain consistent with the templates original formatting.
+     -->
+    <div class="w3-third">
+      <div class="cycle-slideshow">
+        <img src="img/delmar-bubbles.jpg" style="width:100%">
+        <img src="img/4th-of-july.jpg" style="width:100%">
+        <img src="img/riverwalk-selfie.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/happiness1.jpeg" style="width:100%">
+        <img src="img/delmar.jpg" style="width:100%">
+        <img src="img/flowers-kiss.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/flowers-kiss.jpg" style="width:100%">
+        <img src="img/snowday-selfie.jpg" style ="width:100%"/>
+        <img src="img/kya-cuddling.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/first-pic-together.jpg" style="width:100%">
+        <img src="img/riverwalk-selfie.jpg" style="width:100%">
+        <img src="img/worklife.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/maitlin-wedding-weird-woman.jpg" style="width:100%">
+        <img src="img/delmar-bubbles.jpg" style="width:100%">
+        <img src="img/4th-of-july.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/happiness1.jpeg" style="width:100%">
+        <img src="img/flowers-kiss.jpg" style="width:100%">
+        <img src="img/worklife.jpg" style="width:100%">
+      </div>
+    </div>
+    <!-- End First Column -->
+
+    <!-- Second Column
+      Cycle-slideshow to utilize Cycle2. For each set of 3 images, nest a separate
+      div referencing cycle-slideshow inside the div referencing "w3-third". Width
+      set to 100% to remain consistent with the templates original formatting.
+    -->
+    <div class="w3-third">
+      <div class="cycle-slideshow">
+        <img src="img/riverwalk-selfie.jpg" style="width:100%">
+        <img src="img/kya-cuddling.jpg" style="width:100%">
+        <img src="img/maitlins-wedding.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/flowers-kiss.jpg" style="width:100%">
+        <img src="img/universal-butterbeer.jpg" style="width:100%">
+        <img src="img/happiness.jpeg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/kya-cuddling.jpg" style="width:100%">
+        <img src="img/harrypotter-world.jpg" style="width:100%">
+        <img src="img/delmar-bubbles.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/harrypotter-world.jpg" style="width:100%">
+        <img src="img/worklife.jpg" style="width:100%">
+        <img src="img/kya-cuddling.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/maitlins-wedding.jpg" style="width:100%">
+        <img src="img/first-pic-together.jpg" style="width:100%">
+        <img src="img/delmar.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/snow-day.jpg" style="width:100%">
+        <img src="img/happiness.jpeg" style="width:100%">
+        <img src="img/maitlin-wedding-pumpkins.jpg" style="width:100%">
+      </div>
+    </div>
+    <!-- End Second Column -->
+
+    <!-- Third Column
+      Cycle-slideshow to utilize Cycle2. For each set of 3 images, nest a separate
+      div referencing cycle-slideshow inside the div referencing "w3-third". Width
+      set to 100% to remain consistent with the templates original formatting.
+    -->
+    <div class="w3-third">
+      <div class="cycle-slideshow">
+        <img src="img/snow-day.jpg" style="width:100%">
+        <img src="img/worklife.jpg" style="width:100%">
+        <img src="img/first-pic-together.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/happiness.jpeg" style="width:100%">
+        <img src="img/flowers-kiss.jpg" style="width:100%">
+        <img src="img/flowers-selfie.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/harrypotter-world.jpg" style="width:100%">
+        <img src="img/kya-cuddling.jpg" style="width:100%">
+        <img src="img/maitlin-wedding-weird-woman.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/kya-cuddling.jpg" style="width:100%">
+        <img src="img/harrypotter-world.jpg" style="width:100%">
+        <img src="img/maitlins-wedding-pumpkins2.jpg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/maitlin-wedding-pumpkins.jpg" style="width:100%">
+        <img src="img/maitlins-wedding-pumpkins2.jpg" style="width:100%">
+        <img src="img/happiness.jpeg" style="width:100%">
+      </div>
+      <div class="cycle-slideshow">
+        <img src="img/4th-of-july.jpg" style="width:100%">
+        <img src="img/snow-day.jpg" style="width:100%">
+        <img src="img/snowday-selfie.jpg" style="width:100%">
+      </div>
+    </div>
+    <!-- End third Column -->
+  </div>
+
+  <!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<!-- jQuery and Cycle2 sourced here-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://malsup.github.com/jquery.cycle2.js"></script>
+
+<script>
+  // Functionality for toggle grid padding button
+  // Part of the template
+  function myFunction() {
+    var x = document.getElementById("myGrid");
+    if (x.className === "w3-row") {
+      x.className = "w3-row-padding";
+    } else {
+      x.className = x.className.replace("w3-row-padding", "w3-row");
+    }
+  }
+
+  // Open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.width = "100%";
+    document.getElementById("mySidebar").style.display = "block";
+  }
+
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
